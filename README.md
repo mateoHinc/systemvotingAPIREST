@@ -9,7 +9,7 @@ Este proyecto es una API RESTful para gestionar un sistema de votaciones con vot
 - PHP >= 8.0
 - Composer
 - MySQL
-- Postman o `curl` para pruebas
+- Postman para pruebas
 
 --- Instalación local
 
@@ -43,3 +43,29 @@ DB_PASSWORD=XXXXXXXXXXXXX
 ```bash
 php artisan migrate
 ```
+
+5. Levanta el servidor
+```bash
+php artisan serve
+```
+Accede a la API: http://127.0.0.1:8000
+
+# 🔌 Endpoints Principales
+
+| Método | Endpoint                   | Descripción                       |
+|--------|----------------------------|-----------------------------------|
+| POST   | `/api/auth/register`       | Registrar un nuevo usuario        |
+| POST   | `/api/auth/login`          | Iniciar sesión                    |
+| GET    | `/api/auth/me`             | Obtener usuario autenticado       |
+| POST   | `/api/auth/logout`         | Cerrar sesión                     |
+| POST   | `/api/voters`              | Crear votante                     |
+| GET    | `/api/voters`              | Listar votantes                   |
+| GET    | `/api/voters/{id}`         | Obtener información votante       |
+| GET    | `/api/voters/filter`       | Filtrar y Paginar votantes        |
+| POST   | `/api/candidates`          | Crear candidatos                  |
+| GET    | `/api/candidates`          | Listar candidatos                 |
+| GET    | `/api/candidates/{id}`     | Obtener información candidato     |
+| GET    | `/api/candidates/filter`   | Filtrar y Paginar candidatos      |
+| POST   | `/api/votes`               | Emitir voto                       |
+| GET    | `/api/votes/statistics`    | Ver estadísticas de votación      |
+
