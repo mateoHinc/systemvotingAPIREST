@@ -69,3 +69,42 @@ Accede a la API: http://127.0.0.1:8000
 | POST   | `/api/votes`               | Emitir voto                       |
 | GET    | `/api/votes/statistics`    | Ver estadísticas de votación      |
 
+# Ejemplos de Endpoints
+
+Agregar un votante
+
+![image](https://github.com/user-attachments/assets/fbcd8442-0b6b-4032-b88c-758db5b6d889)
+
+Filtrar y paginar votantes
+
+![image](https://github.com/user-attachments/assets/a4eff081-1dfc-42af-a427-3cef39eb915c)
+
+![image](https://github.com/user-attachments/assets/30d76247-3651-4f30-bea5-fb3eb37b8457)
+
+![image](https://github.com/user-attachments/assets/7ba70dc9-7978-4264-b7cd-117066cb2912)
+
+Agregar un candidato
+
+![image](https://github.com/user-attachments/assets/fab1dcb2-fcf8-4ec3-a2a0-76cda3255408)
+
+Filtrar y paginar candidatos
+
+![image](https://github.com/user-attachments/assets/b6887a8a-3e4b-4f26-a74b-3b5f60d13238)
+
+Emitir un voto
+
+![image](https://github.com/user-attachments/assets/860110b2-e575-4a3e-852d-efccdd0aaa64)
+
+En caso que un votanto quiera votar de nuevo
+
+![image](https://github.com/user-attachments/assets/21747caa-a316-4017-9aff-f2feed3aa533)
+
+Mostrar votos emitidos
+
+![image](https://github.com/user-attachments/assets/d270110b-e256-41ea-8b39-f974ffaad26d)
+
+Ver Estadisticas de votos
+
+![image](https://github.com/user-attachments/assets/9b0a70eb-d8c6-42ef-a00e-1f1a88c6297d)
+
+![image](https://github.com/user-attachments/assets/e33387ed-1f15-4958-bc5a-e2ea6f7a82ed)
