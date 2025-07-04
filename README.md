@@ -50,6 +50,20 @@ php artisan serve
 ```
 Accede a la API: http://127.0.0.1:8000
 
+---
+
+# Nota técnica sobre el problema de autenticación de usuario con JWT
+
+Durante la implementación del sistema de autenticación con JWT (JSON Web Token) en el proyecto API RESTful del sistema de votaciones, se presentó un problema técnico al intentar registrar nuevos usuarios y generar el token correspondiente.
+
+# Descripción del problema
+
+Al realizar el registro de un usuario mediante el endpoint POST /api/auth/register, el usuario se creaba correctamente en la base de datos, pero el token JWT no se generaba ni se devolvía en la respuesta como se esperaba. Este comportamiento impedía continuar con el flujo normal de autenticación, ya que el cliente no obtenía el token necesario para acceder a los endpoints protegidos.
+
+De igual forma, durante el inicio de sesión (POST /api/auth/login), se observaron errores al intentar autenticar las credenciales y generar el token JWT, lo que resultaba en una respuesta de error 500 o de credenciales inválidas, incluso con datos correctos.
+
+---
+
 # 🔌 Endpoints Principales
 
 | Método | Endpoint                   | Descripción                       |
@@ -68,6 +82,8 @@ Accede a la API: http://127.0.0.1:8000
 | GET    | `/api/candidates/filter`   | Filtrar y Paginar candidatos      |
 | POST   | `/api/votes`               | Emitir voto                       |
 | GET    | `/api/votes/statistics`    | Ver estadísticas de votación      |
+
+---
 
 # Ejemplos de Endpoints
 
