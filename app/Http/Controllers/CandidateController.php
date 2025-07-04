@@ -33,6 +33,25 @@ class CandidateController extends Controller
         return response()->json(Candidate::all(), 200);
     }
 
+    // GET /candidates/filter
+    public function FilterAndPagination(Request $request)
+    {
+        $query = Candidate::query();
+
+        if ($request->has('name')) {
+            $query->where('name', 'like', '%' . $request->name . '%');
+        }
+
+        if ($request->has('party')) {
+            $query->where('party', 'like', '%' . $request->party . '%');
+        }
+
+        // Paginación (default 10 por página)
+        $candidates = $query->paginate($request->get('per_page', 10));
+
+        return response()->json($candidates, 200);
+    }
+
     // GET /candidates/{id}
     public function show($id)
     {

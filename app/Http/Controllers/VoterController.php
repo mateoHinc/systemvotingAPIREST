@@ -35,6 +35,28 @@ class VoterController extends Controller
         return response()->json(Voter::all(), 200);
     }
 
+    public function FilterAndPagination(Request $request)
+    {
+        $query = Voter::query();
+
+        if ($request->has('name')) {
+            $query->where('name', 'like', '%' . $request->name . '%');
+        }
+
+        if ($request->has('email')) {
+            $query->where('email', 'like', '%' . $request->email . '%');
+        }
+
+        if ($request->has('has_voted')) {
+            $query->where('has_voted', $request->has_voted);
+        }
+
+        // Paginación (default 10 por página)
+        $voters = $query->paginate($request->get('per_page', 10));
+
+        return response()->json($voters, 200);
+    }
+
     // GET /voters/{id}
     public function show($id)
     {

@@ -12,12 +12,14 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::post('/voters', [VoterController::class, 'store']);
+Route::get('/voters/filter', [VoterController::class, 'FilterAndPagination']);
 Route::apiResource('voters', VoterController::class);
 Route::get('/voters', [VoterController::class, 'index']);
 Route::get('/voters/{id}', [VoterController::class, 'show']);
 Route::delete('/voters/{id}', [VoterController::class, 'destroy']);
 
 Route::post('/candidates', [CandidateController::class, 'store']);
+Route::get('/candidates/filter', [CandidateController::class, 'FilterAndPagination']);
 Route::apiResource('candidates', CandidateController::class);
 Route::get('/candidates', [CandidateController::class, 'index']);
 Route::get('/candidates/{id}', [CandidateController::class, 'show']);
