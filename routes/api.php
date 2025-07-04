@@ -6,6 +6,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\VoteController;
 use App\Http\Controllers\VoterController;
+use App\Http\Controllers\AuthController;
+
+Route::post('/auth/register', [AuthController::class, 'register']);
+Route::post('/auth/login', [AuthController::class, 'login']);
+
+Route::middleware(['auth:api'])->group(function () {
+    Route::get('/auth/me', [AuthController::class, 'me']);
+    Route::post('/auth/logout', [AuthController::class, 'logout']);
+});
 
 Route::get('/user', function (Request $request) {
     return $request->user();
