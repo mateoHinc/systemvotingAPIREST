@@ -78,6 +78,10 @@ class VoterController extends Controller
             return response()->json(['error' => 'Votante no encontrado'], 404);
         }
 
+        if ($voter->has_voted) {
+            return response()->json(['error' => 'No se puede eliminar: el votante ya emitió un voto'], 400);
+        }
+
         $voter->delete();
 
         return response()->json(['message' => 'Votante eliminado correctamente'], 200);

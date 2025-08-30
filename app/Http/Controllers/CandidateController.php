@@ -73,6 +73,10 @@ class CandidateController extends Controller
             return response()->json(['error' => 'Candidato no encontrado'], 404);
         }
 
+        if ($candidate->votes > 0) {
+            return response()->json(['error' => 'No se puede eliminar: el candidato ya tiene votos registrados'], 400);
+        }
+
         $candidate->delete();
 
         return response()->json(['message' => 'Candidato eliminado correctamente']);
